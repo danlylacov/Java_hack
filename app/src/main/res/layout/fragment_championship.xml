@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"> <!-- этот атрибут гарантирует, что ScrollView заполнит весь экран -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"> <!-- замените на wrap_content -->
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/upper_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:background="@drawable/background_gradient_green_white"
+            >
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Сэкономлено за неделю"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="40dp"/>
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_description"
+                android:layout_marginTop="20px"
+                tools:text="23456 руб"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_description_duty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_amount"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20px"
+                android:text="Цель: "/>
+
+            <TextView
+                android:id="@+id/tv_duty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20px"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/tv_description_duty"
+                app:layout_constraintTop_toBottomOf="@id/tv_amount"
+                tools:text="78 %"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upper_layout"
+            app:cardCornerRadius="12dp"
+            app:strokeColor="@color/green"
+            app:strokeWidth="2dp"
+            android:padding="20px">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+
+                <TextView
+                    android:id="@+id/friend_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Топ друзей"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    />
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
