@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fillViewport="true"> <!-- этот атрибут гарантирует, что ScrollView заполнит весь экран -->
+    android:fillViewport="true"
+    tools:context=".ui.championship.ChampionshipFragment">> <!-- этот атрибут гарантирует, что ScrollView заполнит весь экран -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,18 +18,28 @@
             android:layout_height="wrap_content"
             android:padding="20dp"
             android:background="@drawable/background_gradient_green_white"
-            >
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_btn_back"
+                android:backgroundTint="#00FFFFFF"/>
+
+
+
 
             <TextView
                 android:id="@+id/tv_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_back"
                 android:text="Сэкономлено за неделю"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginTop="40dp"/>
+                android:layout_marginTop="10dp"/>
 
             <TextView
                 android:id="@+id/tv_amount"
@@ -91,6 +102,194 @@
                     android:textStyle="bold"
                     android:textSize="20dp"
                     />
+
+                <ImageView
+                    android:id="@+id/second_friend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/friend_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="@drawable/ic_second_friend"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="50dp"/>
+
+                <ImageView
+                    android:id="@+id/third_friend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/friend_description"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/ic_third_friend"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="50dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/first_friend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/friend_description"
+                    app:layout_constraintStart_toEndOf="@id/second_friend"
+                    app:layout_constraintEnd_toStartOf="@id/third_friend"
+                    android:background="@drawable/ic_first_friend"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/second_friend_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/second_friend"
+                    app:layout_constraintStart_toStartOf="@id/second_friend"
+                    app:layout_constraintEnd_toEndOf="@id/second_friend"
+                    tools:text="Иван\nИванович"
+                    android:textAlignment="center"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/first_friend_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/first_friend"
+                    app:layout_constraintStart_toStartOf="@id/first_friend"
+                    app:layout_constraintEnd_toEndOf="@id/first_friend"
+                    tools:text="Иван\nИванович"
+                    android:textAlignment="center"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/third_friend_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/third_friend"
+                    app:layout_constraintStart_toStartOf="@id/third_friend"
+                    app:layout_constraintEnd_toEndOf="@id/third_friend"
+                    tools:text="Иван\nИванович"
+                    android:textAlignment="center"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:id="@+id/second_friend_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/second_friend_name"
+                    app:layout_constraintStart_toStartOf="@id/second_friend_name"
+                    app:layout_constraintEnd_toEndOf="@id/second_friend_name"
+                    tools:text="34567,4"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/first_friend_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/first_friend_name"
+                    app:layout_constraintStart_toStartOf="@id/first_friend_name"
+                    app:layout_constraintEnd_toEndOf="@id/first_friend_name"
+                    tools:text="34567,4"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/third_friend_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/third_friend_name"
+                    app:layout_constraintStart_toStartOf="@id/third_friend_name"
+                    app:layout_constraintEnd_toEndOf="@id/third_friend_name"
+                    tools:text="34567,4"
+                    android:textAlignment="center"/>
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_friend4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints"
+                    app:layout_constraintTop_toBottomOf="@id/second_friend_amount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/grey"
+                    app:cardCornerRadius="12dp"
+                    android:layout_marginTop="10dp">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/friend4_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Иван Иванович"
+                        android:textStyle="bold"
+                        android:layout_marginHorizontal="15dp"
+                        />
+
+                        <TextView
+                            android:id="@+id/friend4_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/friend4_name"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:text="3456,64"
+                            android:layout_marginHorizontal="15dp"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_friend5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints"
+                    app:layout_constraintTop_toBottomOf="@id/card_friend4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/grey"
+                    app:cardCornerRadius="12dp"
+                    android:layout_marginTop="10dp"
+                    >
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/friend5_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Иван Иванович"
+                            android:textStyle="bold"
+                            android:layout_marginHorizontal="15dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/friend5_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/friend5_name"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:text="3456,64"
+                            android:layout_marginHorizontal="15dp"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
 
 
 
