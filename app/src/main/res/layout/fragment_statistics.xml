@@ -77,7 +77,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/grafic"
             android:background="@drawable/line_2"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="30dp"/>
 
 
 
