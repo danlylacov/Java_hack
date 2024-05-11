@@ -43,7 +43,8 @@
             app:layout_constraintTop_toBottomOf="@id/tv_amount"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            />
 
 
         <ImageButton
@@ -67,6 +68,38 @@
             android:background="@null"/>
 
 
+        <TextView
+            android:id="@+id/month_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/grafic"
+            tools:text="апрель"
+            android:textSize="24dp"
+            android:layout_marginTop="0dp"/>
+
+        <ImageButton
+            android:id="@+id/btn_change_month_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/month_name"
+            app:layout_constraintEnd_toStartOf="@id/month_name"
+            app:layout_constraintBottom_toBottomOf="@id/month_name"
+            android:background="@drawable/ic_chevron_left"
+            android:layout_marginRight="10dp"
+            />
+
+        <ImageButton
+            android:id="@+id/btn_change_month_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/month_name"
+            app:layout_constraintStart_toEndOf="@id/month_name"
+            app:layout_constraintBottom_toBottomOf="@id/month_name"
+            android:background="@drawable/chevron_right"
+            android:layout_marginLeft="10dp"
+            />
 
 
         <ImageView
@@ -77,17 +110,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/grafic"
             android:background="@drawable/line_2"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="40dp"/>
 
-
-
-
-
-
-
-
-
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            tools:listitem="@layout/item_expence"/>
+        
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
