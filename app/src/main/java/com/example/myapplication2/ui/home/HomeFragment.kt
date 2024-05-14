@@ -31,7 +31,6 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         binding.btnChampionship.setOnClickListener {
-            // Здесь код для переключения на другую страницу
             findNavController().navigate(R.id.action_homeFragment_to_championshipFragment)
         }
 
