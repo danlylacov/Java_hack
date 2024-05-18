@@ -39,12 +39,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        lifecycleScope.launch(Dispatchers.IO) {
-            val response = NetworkService.api.getAmount()
-            if (response.isSuccessful) {
-                Log.d("API:", response.body().toString())
-            }
-        }
+
 
 
     }

@@ -31,6 +31,14 @@ class ChampionshipFragment : Fragment() {
             findNavController().navigate(R.id.championshipFragment_to_action_homeFragment)
         }
 
+        championshipViewModel.economyPercent.observe(viewLifecycleOwner) { economyPercent->
+            binding.tvDuty.text = "${economyPercent} %"
+        }
+
+        championshipViewModel.economy.observe(viewLifecycleOwner) { economy ->
+            binding.tvAmount.text = "${economy} руб"
+        }
+
 
 
         return root
